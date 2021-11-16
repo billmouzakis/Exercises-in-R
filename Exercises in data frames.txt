@@ -75,7 +75,7 @@ Solution
 class(VADeaths) #for a
 df = as.data.frame(VADeaths) #in order to transform VADeaths to a data frame
 df = cbind(df,Total = rowSums(df))
-df[,c(5,1,2,3,4)] ##watch out this creates a new data frame and doesn't change the initial
+df[,c(5,1,2,3,4)] # watch out this creates a new data frame and doesn't change the initial
 
 7)For this exercise we’ll use the (built-in) dataset state.x77.
 
@@ -89,3 +89,19 @@ class(state.x77) #for a
 df = as.data.frame(state.x77)
 length(df$Population < 4300) #for b
 which(df$Income == max(df$Income)) #for c
+
+8)With the dataset swiss, create a data frame of only the rows
+1, 2, 3, 10, 11, 12 and 13, and only the variables Examination, 
+Education and Infant.Mortality.
+
+a) The infant mortality of Sarine is wrong, it should be a NA, change it.
+b) Create a row that will be the total sum of the column, name it Total.
+c) Create a new variable that will be the proportion of Examination (Examination / Total)
+
+Solution:
+
+df = swiss[c(1,2,3,10,11,12),c(3,4,6)] # creation of the data frame we will work on
+df$Infant.Mortality[4]=NA #for a
+df = rbind(df, Total=colSums(df)) # watch out this changes th initial data frame
+a = df$Examination/(df[7,1]); # we can multiply with 100 in order to show the percentage
+df = cbind(df,Prop_of_Exam = a) # watch out this changes th initial data frame
