@@ -1,4 +1,8 @@
-Exercises in Data Frames
+#Exercises in Data Frames
+
+#Source:https://www.r-exercises.com/2016/01/04/data-frame-exercises/
+
+#Solutions:https://www.r-exercises.com/2016/01/04/data-frame-exercises-solutions/
 
 1)Create the following data frame,afterwards invert Sex for all individuals
 
