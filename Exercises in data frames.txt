@@ -1,0 +1,90 @@
+1)Create the following data frame,afterwards invert Sex for all individuals
+
+		Age	Height	Weight	Sex
+Alex		25	177	57	F
+Lilly		31	163	69	F
+Mark		23	190	83	M	
+Oliver		52	179	75	M
+Martha		76	163	70	F
+Lucas		49	183	83	M
+Caroline	26	164	53	F
+
+Solution:
+
+a = c(25,31,23,52,76,49,26)
+b = c(177,163,190,179,163,183,164)
+c = c(57,69,83,75,70,83,53)
+
+df = data.frame(Age = a,Height = b,Weight = c)
+rownames(df)=c("Alex","Lilly","Mark","Oliver","Martha","Lucas","Caroline")
+
+e = c("F","F","M","M","F","M","F")
+df = cbind(df,Sex = e)
+
+2)Create this data frame (make sure you import the variable Working as character and not factor).
+
+		Working
+Alex		Yes
+Lilly		No
+Mark		No	
+Oliver		Yes
+Martha		Yes
+Lucas		No
+Caroline	Yes
+
+Add this data frame column-wise to the previous one
+a)How many rows and columns does the new data frame have?
+b)What class of data is in each column?
+
+Solution:
+
+d = c("Yes","No","No","Yes","Yes","No","Yes")
+df = cbind(df, Working = d)
+dim(df) #for a
+laplly(df,class) #for b
+
+3)Check what class of data is the (built-in data set) state.center and convert it to data frame
+
+class(sta.center) #It is a list and we haven't been occupied with lists
+
+4)Create a simple data frame from 3 vectors. Order the entire data frame by the first column.
+
+Solution:
+#When we will create 3 vectors then we will write
+
+#we will not use attach
+df[order(df$name_of_the_first_column),] #watch out this creates a new data frame and doesn't change the initial
+
+5)Create a data frame from a matrix of your choice, change the row names so every row says id_i (where i is the row number) and change the column names to variable_i (where i is the column number). I.e., for column 1 it will say variable_1, and for row 2 will say id_2 and so on.
+
+Solution:
+
+#When we will create the data frame we will write
+rownames(df) = c("id_1","id_2", and so on) #this is for rows
+colnames(df) = c("Variable_1,"Variable_2", and so on) #this is for columns
+
+6)For this exercise, we’ll use the (built-in) dataset VADeaths.
+
+a)Make sure the object is a data frame, if not change it to a data frame
+b)Create a new variable, named Total, which is the sum of each row.
+c)Change the order of the columns so total is the first variable.
+
+Solution
+
+class(VADeaths) #for a
+df = as.data.frame(VADeaths) #in order to transform VADeaths to a data frame
+df = cbind(df,Total = rowSums(df))
+df[,c(5,1,2,3,4)] ##watch out this creates a new data frame and doesn't change the initial
+
+7)For this exercise we’ll use the (built-in) dataset state.x77.
+
+a)Make sure the object is a data frame, if not change it to a data frame.
+b)Find out how many states have an income of less than 4300.
+c)Find out which is the state with the highest income.
+
+Solution:
+
+class(state.x77) #for a
+df = as.data.frame(state.x77)
+length(df$Population < 4300) #for b
+which(df$Income == max(df$Income)) #for c
