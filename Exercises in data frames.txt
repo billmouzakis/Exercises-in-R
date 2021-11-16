@@ -109,8 +109,10 @@ Solution:
 #we will not use attach
 df[order(df$name_of_the_first_column),] #watch out this creates a new data frame and doesn't change the initial
 
-5)Create a data frame from a matrix of your choice, change the row names so every row says id_i (where i is the row number) and change the 
-column names to variable_i (where i is the column number). I.e., for column 1 it will say variable_1, and for row 2 will say id_2 and so on.
+5)Create a data frame from a matrix of your choice, change the row 
+names so every row says id_i (where i is the row number) and change the 
+column names to variable_i (where i is the column number). I.e., for 
+column 1 it will say variable_1, and for row 2 will say id_2 and so on.
 
 Solution:
 
