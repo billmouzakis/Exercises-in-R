@@ -1,8 +1,56 @@
+#Exercises in Matrices
+
+#Source: https://www.r-exercises.com/2015/11/28/matrix-exercises/
+
+#Solutions: https://www.r-exercises.com/2015/12/04/matrix-exercises-solutions/
+
+1) Create three vectors  x,y,z  with integers and each vector has 3 elements.
+Combine the three vectors to become a 3×3 matrix  A  where each column 
+represents a vector. Change the row names to  a,b,c.
+
+Solution:
+
+x = c(-1,-5,5) #first vector
+y = c(10,1,17) #second vector
+z = c(3,-10,5) #third vector
+
+# There is no straight forward command in order
+# to create the matrix we want with x,y,z.
+# So, we have to improvise
+# Hint: Every column represents a vector
+# so we will use cbind function
+
+A = cbind(x,y,z)
+rownames(A) = c("a","b","c")
+
+2) Please check your result from Exercise 1,
+using  is.matrix(A). It should return  TRUE, 
+if your answer is correct. Otherwise, please 
+correct your answer.
+
+Solution:
+
+is.matrix(A)
+
+3) Create a vector with 12 integers. Convert the vector
+to a 4*3 matrix  B  using  matrix(). Please change the 
+column names to  x, y, z  and row names to  a, b, c, d.
+
+Solution:
+
+# We will use the three vectors we created before
+# and we will add just a new one
+
+B = matrix(c(-1,-5,5,10,1,17,3,-10,5,-4,2,3), nrow = 4, ncol = 3)
+dimnames(B) = list(c("a","b","c","d"),c("x","y","z"))
+
+----------------------------------------------------------------------------------------------------------------
+
 #Exercises in Data Frames
 
-#Source:https://www.r-exercises.com/2016/01/04/data-frame-exercises/
+#Source: https://www.r-exercises.com/2016/01/04/data-frame-exercises/
 
-#Solutions:https://www.r-exercises.com/2016/01/04/data-frame-exercises-solutions/
+#Solutions: https://www.r-exercises.com/2016/01/04/data-frame-exercises-solutions/
 
 1)Create the following data frame,afterwards invert Sex for all individuals
 
