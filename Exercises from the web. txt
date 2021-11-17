@@ -217,10 +217,20 @@ b) Change the row names so that they are the same as Name, and remove the variab
 
 #Solution:
 
-data1 = c("C:/Users/e-mashine/Desktop/Table0.txt") #I didn't put header = TRUE
+data1 = read.table("C:/Users/e-mashine/Desktop/Table0.txt") #I didn't put header = TRUE
 # because it will consider the elements of the first row as columns
 # data1 is a data frame
 colnames(data1) = c("Name","Age","Height","Weight","Sex") #for a
 rownames(data1) = data1$Name
 data = data1[,-1] # we assign this to a new variable because this command
 # doen't do changes in the initial
+
+2)Read the file Table1.txt, how many rows and columns does it have?
+
+a)Make sure you read the variable Name as characters and not as factors.
+
+#Solution:
+
+data1 = read.table("C:/Users/e-mashine/Desktop/Table1.txt",header = TRUE)
+number_of_columns = length(data1[1,])
+is.character(data1$Name) # for a
