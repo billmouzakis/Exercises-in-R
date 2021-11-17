@@ -200,3 +200,27 @@ initial plot.Distinguish every plot with any colours you want.
 plot(mpg,drat,col=2) # the plot of mpg and drat with red colour
 points(mpg,wt,col=3) # we add the plot of mpg and wt with green colour
 
+----------------------------------------------------------------------------------------------------------------
+
+#Exercises in files
+
+#Source: https://www.r-exercises.com/2016/01/07/reading-delimited-data/
+
+#You need this source in order to load the files
+
+#Answers: https://www.r-exercises.com/2016/01/07/reading-delimited-data-solutions/
+
+1)Read the file Table0.txt
+
+a) Change the names of the columns to Name, Age, Height, Weight and Sex.
+b) Change the row names so that they are the same as Name, and remove the variable Name.
+
+#Solution:
+
+data1 = c("C:/Users/e-mashine/Desktop/Table0.txt") #I didn't put header = TRUE
+# because it will consider the elements of the first row as columns
+# data1 is a data frame
+colnames(data1) = c("Name","Age","Height","Weight","Sex") #for a
+rownames(data1) = data1$Name
+data = data1[,-1] # we assign this to a new variable because this command
+# doen't do changes in the initial
