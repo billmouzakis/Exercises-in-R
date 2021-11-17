@@ -161,3 +161,42 @@ df$Infant.Mortality[4]=NA #for a
 df = rbind(df, Total=colSums(df)) # watch out this changes th initial data frame
 a = df$Examination/(df[7,1]); # we can multiply with 100 in order to show the percentage
 df = cbind(df,Prop_of_Exam = a) # watch out this changes th initial data frame
+
+----------------------------------------------------------------------------------------------------------------
+
+#Exercises in plots
+
+#Source: https://www.r-exercises.com/2016/03/11/start-plotting-data-3/
+
+#Answers: https://www.r-exercises.com/2016/03/11/start-plotting-data-solutions/
+
+# We will use mtcars dataset
+
+1)Do the plot of miles per galon(mpg) and Rear axle ratio(drat)
+
+#Solution:
+
+attach(mtcars) #in order to be able to work straight with the variables
+# In the next exercises we will consider that this command is already 
+# written and we will not mention it
+
+plot(mpg,drat)
+
+2)Do the plot of mpg and drat so as points are connected with lines
+
+#Solution:
+
+plot(mpg,drat,type = "l")
+
+3)Do the plot of mpg and drat and change the colour of the blank dots
+
+#Solution:
+
+plot(mpg,drat,col=2) # I chose red
+
+3)Do the plot of mpg and drat and add the plot mpg and weight in the
+initial plot.Distinguish every plot with any colours you want.
+
+plot(mpg,drat,col=2) # the plot of mpg and drat with red colour
+points(mpg,wt,col=3) # we add the plot of mpg and wt with green colour
+
